@@ -24,7 +24,7 @@ osThreadId tid_lcd;                     /* Thread id of thread: lcd          */
 #define LED_C   2
 #define LED_D   3
 #define LED_CLK 7
-
+#define hayrullah 7
 
 /*----------------------------------------------------------------------------
  *      Switch LED on
@@ -38,6 +38,7 @@ void Switch_On (unsigned char led) {
  *---------------------------------------------------------------------------*/
 void Switch_Off (unsigned char led) {
   LED_Off(led);
+	
 }
 
 
@@ -125,7 +126,7 @@ osThreadDef(clock,  osPriorityNormal, 1, 0);
  *      Main: Initialize and start RTX Kernel
  *---------------------------------------------------------------------------*/
 int main (void) {
-
+	uint8_t hayrullah3=0;
   LED_Initialize();                         /* Initialize the LEDs           */
   tid_phaseA = osThreadCreate(osThread(phaseA), NULL);
   tid_phaseB = osThreadCreate(osThread(phaseB), NULL);
